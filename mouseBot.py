@@ -14,8 +14,8 @@ def moveClick(x, y):
     # cursor move
     win32api.SetCursorPos((x, y))
     # click even call. Optional
-    # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
-    # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x, y, 0, 0)
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x, y, 0, 0)
 
 
 while condition_to_run:
@@ -27,8 +27,8 @@ while condition_to_run:
     screen_height = root.winfo_screenheight()
 
     # pass random value to axis
-    x = randint(screen_height, screen_width)
-    y = randint(screen_height, screen_width)
+    x = randint(screen_height - 500, screen_width - 500)
+    y = randint(screen_height - 500, screen_width - 500)
     moveClick(x, y)
     print('Mouse moved to x=', x, ' and y=', y)
 
