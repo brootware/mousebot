@@ -7,32 +7,34 @@ import tkinter as tk
 
 # Time to stop is set to 6pm by default. Uses 24 hours time
 time_to_stop = datetime.time(18, 00, 0)
-current_time = datetime.datetime.now().time()
+condition_to_run = True
 
 
-def click(x, y):
+def moveClick(x, y):
     # cursor move
     win32api.SetCursorPos((x, y))
-    # click even call
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x, y, 0, 0)
+    # click even call. Optional
+    # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
+    # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x, y, 0, 0)
 
 
-while True:
+while condition_to_run:
+    # get current time
+    current_time = datetime.datetime.now().time()
     # get screen size
     root = tk.Tk()
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
 
     # pass random value to axis
-    x = randint(screen_height-500, screen_width-500)
-    y = randint(screen_height-500, screen_width-500)
-    click(x, y)
-    print('I am moving to x=', x, ' and y=', y)
+    x = randint(screen_height, screen_width)
+    y = randint(screen_height, screen_width)
+    moveClick(x, y)
+    print('Mouse moved to x=', x, ' and y=', y)
 
     if current_time > time_to_stop:
         print("It's after ", time_to_stop, " now, stopping this script.")
-        break
-    else:
-        # Interval in seconds
-        time.sleep(5)
+        condition_to_run = False
+
+    # Interval in seconds
+    time.sleep(10)
