@@ -1,5 +1,7 @@
 # Mouse Bot
 
+> If you're from GT and annoyed with SGVPN idle timeouts while working on development laptop, You might find this useful.
+
 Note : This will work with Windows only
 
 1. Script to move cursor random for each 10 seconds or any time you set it to.
@@ -11,3 +13,4 @@ To run the script in Powershell terminal, you need to set python envrionment var
 ```
 $Env:python = <pathToPythonBinary>
 ```
+
