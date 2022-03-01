@@ -1,6 +1,6 @@
 # Mouse Bot
 
-> If you're from GT and annoyed with SGVPN idle timeouts while working on development laptop, You might find this useful.
+> This repository is archived and no longer in development. Use the newly launched PyMouseBot instead at https://github.com/brootware/PyMouseBot
 
 Note : This will work with Windows only
 
